@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }} – Krish Posa</title>
+
+  <!-- Shopify Core -->
+  {{ content_for_header }}
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/krishnaposa/shopify-theme/assets/style-dark-gym.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/png">
+</head>
+<body class="krishposa-body">
+
+  <!-- Header -->
+  <header class="krishposa-header">
+    <div class="krishposa-header-inner">
+      <a href="/" class="krishposa-logo">KRISH POSA</a>
+      <nav class="krishposa-nav">
+        <a href="/collections/all">Shop</a>
+        <a href="/pages/about">About</a>
+        <a href="/pages/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="krishposa-main">
+    {{ content_for_layout }}
+  </main>
+
+  <!-- Footer -->
+  <footer class="krishposa-footer">
+    <p>© {{ 'now' | date: '%Y' }} Krish Posa™ – All Rights Reserved.</p>
+    <p>
+      <a href="/policies/privacy-policy">Privacy Policy</a> • 
+      <a href="/policies/terms-of-service">Terms</a>
+    </p>
+  </footer>
+
+  <!-- Countdown & Global Scripts -->
+  <script src="https://cdn.jsdelivr.net/gh/krishnaposa/shopify-theme/snippets/countdown.js"></script>
+  {{ content_for_footer }}
+</body>
+</html>
