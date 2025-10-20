@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "theme_color",
+        "label": "Primary theme color",
+        "default": "#ff5252"
+      }
+    ]
+  }
+]
