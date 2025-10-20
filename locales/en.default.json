@@ -1,0 +1,13 @@
+{
+  "general": {
+    "404": {
+      "title": "Page not found",
+      "subtext_html": "The page you are looking for doesn't exist."
+    }
+  },
+  "sections": {
+    "featured_product": {
+      "heading": "Featured Product"
+    }
+  }
+}
