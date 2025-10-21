@@ -1,12 +1,40 @@
 [
   {
-    "name": "Theme settings",
+    "name": "Brand Settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary Color",
+        "default": "#ff5252"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#111111"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#ffffff"
+      }
+    ]
+  },
+  {
+    "name": "Footer",
     "settings": [
       {
         "type": "text",
-        "id": "theme_color",
-        "label": "Primary theme color",
-        "default": "#ff5252"
+        "id": "footer_text",
+        "label": "Footer Text",
+        "default": "© Krish Posa™ – All Rights Reserved"
       }
     ]
   }
