@@ -14,10 +14,12 @@
       "settings": {
         "heading": "Featured Product"
       }
-    }
+    },
+     "testimonials": { "type": "testimonials", "settings": {} }
   },
   "order": [
     "hero-banner",
-    "featured-product"
+    "featured-product",
+    "testimonials"
   ]
 }
