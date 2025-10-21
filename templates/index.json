@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "Train Harder. Grip Smarter.",
+        "subheading": "Performance gear built for every rep.",
+        "button_label": "Shop Now",
+        "button_link": "/collections/all"
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "settings": {
+        "heading": "Featured Product"
+      }
+    }
+  },
+  "order": [
+    "hero-banner",
+    "featured-product"
+  ]
+}
