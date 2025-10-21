@@ -1,0 +1,39 @@
+{% schema %}
+{
+  "name": "Featured Product",
+  "settings": [
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "Choose a product"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Product"
+    }
+  ],
+  "presets": [
+    { "name": "Featured Product", "category": "Products" }
+  ]
+}
+{% endschema %}
+
+<section class="krishposa-featured">
+  <h2>{{ section.settings.heading }}</h2>
+
+  {% if section.settings.featured_product %}
+    {% assign product = all_products[section.settings.featured_product] %}
+    <div class="featured-inner">
+      <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title }}">
+      <div class="featured-info">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.description | strip_html | truncate: 150 }}</p>
+        <a href="{{ product.url }}" class="krishposa-btn">View Product</a>
+      </div>
+    </div>
+  {% else %}
+    <p>Select a product to display here.</p>
+  {% endif %}
+</section>
