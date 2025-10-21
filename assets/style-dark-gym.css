@@ -1,14 +1,17 @@
+/* === Global Styling for Krish Posa Theme === */
+
 body.krishposa-body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #111;
-  color: #eee;
+  font-family: var(--body-font-family, 'Inter'), sans-serif;
+  background-color: var(--background-color, #111);
+  color: var(--text-color, #eee);
 }
 
+/* Header */
 .krishposa-header {
   background: #000;
   padding: 20px;
-  border-bottom: 2px solid #c00;
+  border-bottom: 2px solid var(--primary-color, #c00);
 }
 
 .krishposa-header-inner {
@@ -20,7 +23,7 @@ body.krishposa-body {
 }
 
 .krishposa-logo {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--heading-font-family, 'Archivo Black'), sans-serif;
   font-size: 1.5em;
   color: #fff;
   text-decoration: none;
@@ -30,14 +33,16 @@ body.krishposa-body {
   color: #ddd;
   text-decoration: none;
   margin-left: 20px;
+  font-weight: 500;
 }
 
 .krishposa-nav a:hover {
-  color: #f33;
+  color: var(--primary-color, #ff5252);
 }
 
+/* Banner / Timer */
 .krishposa-banner {
-  background: #c00;
+  background: var(--primary-color, #c00);
   color: #fff;
   text-align: center;
   padding: 10px;
@@ -47,19 +52,20 @@ body.krishposa-body {
 .krishposa-timer {
   text-align: center;
   background: #222;
-  color: #ff5252;
+  color: var(--primary-color, #ff5252);
   font-weight: bold;
   padding: 8px 0;
   font-size: 1.1em;
 }
 
+/* Hero */
 .krishposa-hero {
   text-align: center;
-  padding: 40px 10px;
+  padding: 60px 10px;
 }
 
 .krishposa-hero h2 {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: var(--heading-font-family, 'Archivo Black'), sans-serif;
   color: #fff;
   margin-bottom: 10px;
 }
@@ -75,6 +81,7 @@ body.krishposa-body {
   margin-top: 20px;
 }
 
+/* Features */
 .krishposa-features {
   max-width: 700px;
   margin: 0 auto;
@@ -86,78 +93,83 @@ body.krishposa-body {
   text-align: center;
 }
 
-.krishposa-features ul {
-  list-style: none;
-  padding: 0;
-}
-
 .krishposa-features li {
   background: #181818;
   padding: 10px 15px;
-  border-left: 3px solid #c00;
+  border-left: 3px solid var(--primary-color, #c00);
   margin-bottom: 10px;
   border-radius: 6px;
+  list-style: none;
 }
 
-.krishposa-cta {
-  text-align: center;
-  margin: 30px 0;
-}
-
+/* Buttons */
 .krishposa-btn {
-  background: #ff5252;
+  background: var(--primary-color, #ff5252);
   color: #fff;
   padding: 14px 30px;
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
   transition: background 0.3s;
+  display: inline-block;
 }
 
 .krishposa-btn:hover {
   background: #e11;
 }
 
+/* Footer */
 .krishposa-footer {
   text-align: center;
   padding: 30px 10px;
   color: #777;
   background: #000;
   font-size: 0.9em;
+  border-top: 2px solid var(--primary-color, #c00);
 }
 
 .krishposa-footer a {
-  color: #ccc;
+  color: var(--primary-color, #ccc);
   text-decoration: none;
 }
 
+.krishposa-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Testimonials */
 .krishposa-testimonials {
   text-align: center;
   padding: 40px 20px;
   color: #eee;
 }
+
 .krishposa-testimonials h2 {
   font-size: 2em;
   margin-bottom: 20px;
-  color: #ff5252;
+  color: var(--primary-color, #ff5252);
 }
+
 .testimonial-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
+
 .testimonial-item {
   background: #181818;
-  border-left: 4px solid #c00;
+  border-left: 4px solid var(--primary-color, #c00);
   padding: 20px;
   max-width: 300px;
   border-radius: 8px;
 }
+
 .testimonial-item .quote {
   font-style: italic;
   margin-bottom: 10px;
 }
+
 .testimonial-item .author {
   font-weight: bold;
   color: #ccc;
