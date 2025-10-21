@@ -9,62 +9,24 @@
   {{ content_for_header }}
 
   <!-- Dynamic Shopify Fonts -->
-  {{ settings.heading_font | font_face }}
-  {{ settings.body_font | font_face }}
+  <style>
+    {{ settings.heading_font | font_face }}
+    {{ settings.body_font | font_face }}
+  </style>
 
-  <!-- Global Styles -->
-  <link rel="stylesheet" href="{{ 'style-dark-gym.css' | asset_url }}">
-
-  <!-- Dynamic Theme Colors + Fonts -->
+  <!-- Dynamic Theme Variables -->
   <style>
     :root {
-      /* Dynamic Colors */
       --primary-color: {{ settings.primary_color }};
       --background-color: {{ settings.background_color }};
       --text-color: {{ settings.text_color }};
-
-      /* Dynamic Fonts */
       --heading-font-family: {{ settings.heading_font.family }};
       --body-font-family: {{ settings.body_font.family }};
     }
-
-    body.krishposa-body {
-      background-color: var(--background-color);
-      color: var(--text-color);
-      font-family: var(--body-font-family, 'Inter'), sans-serif;
-    }
-
-    h1, h2, h3, .krishposa-logo {
-      font-family: var(--heading-font-family, 'Archivo Black'), sans-serif;
-    }
-
-    a, .krishposa-btn {
-      color: var(--primary-color);
-    }
-
-    .krishposa-btn {
-      background: var(--primary-color);
-      color: #fff;
-    }
-
-    .krishposa-btn:hover {
-      background: #c00;
-    }
-
-    .krishposa-header {
-      background-color: #000;
-      border-bottom: 2px solid var(--primary-color);
-    }
-
-    .krishposa-footer {
-      background-color: #000;
-      color: #aaa;
-    }
-
-    .krishposa-footer a {
-      color: var(--primary-color);
-    }
   </style>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="{{ 'style-dark-gym.css' | asset_url }}">
 
   <!-- Favicon -->
   <link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/png">
