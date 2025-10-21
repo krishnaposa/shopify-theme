@@ -130,3 +130,35 @@ body.krishposa-body {
   color: #ccc;
   text-decoration: none;
 }
+
+.krishposa-testimonials {
+  text-align: center;
+  padding: 40px 20px;
+  color: #eee;
+}
+.krishposa-testimonials h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ff5252;
+}
+.testimonial-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.testimonial-item {
+  background: #181818;
+  border-left: 4px solid #c00;
+  padding: 20px;
+  max-width: 300px;
+  border-radius: 8px;
+}
+.testimonial-item .quote {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.testimonial-item .author {
+  font-weight: bold;
+  color: #ccc;
+}
