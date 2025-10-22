@@ -22,20 +22,38 @@
       {
         "type": "color",
         "id": "primary_color",
-        "label": "Primary Color",
-        "default": "#ff5252"
+        "label": "Primary Color (Green)",
+        "default": "#6BB642"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color",
+        "label": "Secondary Color (Blue)",
+        "default": "#3663B0"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent Color (Orange)",
+        "default": "#F28C28"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color (Purple)",
+        "default": "#8A3FA0"
       },
       {
         "type": "color",
         "id": "background_color",
         "label": "Background Color",
-        "default": "#111111"
+        "default": "#0D0D0D"
       },
       {
         "type": "color",
         "id": "text_color",
         "label": "Text Color",
-        "default": "#ffffff"
+        "default": "#F5F5F5"
       }
     ]
   },
@@ -46,7 +64,7 @@
         "type": "text",
         "id": "footer_text",
         "label": "Footer Text",
-        "default": "© Krish Posa™ – All Rights Reserved"
+        "default": "© Tek Matrix LLC — All Rights Reserved"
       }
     ]
   }
