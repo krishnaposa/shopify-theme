@@ -3,32 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page_title }} – Krish Posa</title>
+  <title>{{ page_title }} – Tek Matrix</title>
 
-  <!-- Shopify Core -->
   {{ content_for_header }}
 
-  <!-- Dynamic Shopify Fonts -->
-  <style>
-    {{ settings.heading_font | font_face }}
-    {{ settings.body_font | font_face }}
-  </style>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Dynamic Theme Variables -->
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="{{ 'style-tek.css' | asset_url }}">
+
+  <!-- Theme Variables -->
   <style>
     :root {
       --primary-color: {{ settings.primary_color }};
+      --secondary-color: {{ settings.secondary_color }};
+      --accent-color: {{ settings.accent_color }};
+      --heading-color: {{ settings.heading_color }};
       --background-color: {{ settings.background_color }};
       --text-color: {{ settings.text_color }};
-      --heading-font-family: {{ settings.heading_font.family }};
-      --body-font-family: {{ settings.body_font.family }};
     }
   </style>
 
-  <!-- External Stylesheet -->
-  <link rel="stylesheet" href="{{ 'style-dark-gym.css' | asset_url }}">
-
-  <!-- Favicon -->
   <link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/png">
 </head>
 
@@ -39,12 +35,11 @@
     <div class="krishposa-header-inner">
       {% if settings.logo %}
         <a href="/" class="krishposa-logo">
-          <img src="{{ settings.logo | img_url: '200x' }}" alt="Krish Posa Logo">
+          <img src="{{ settings.logo | img_url: '200x' }}" alt="Tek Matrix Logo" class="site-logo">
         </a>
       {% else %}
-        <a href="/" class="krishposa-logo">KRISH POSA</a>
+        <a href="/" class="krishposa-logo">TEK MATRIX</a>
       {% endif %}
-
       <nav class="krishposa-nav">
         <a href="/collections/all">Shop</a>
         <a href="/pages/about">About</a>
@@ -53,21 +48,21 @@
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Hero Section -->
   <main class="krishposa-main">
     {{ content_for_layout }}
   </main>
 
   <!-- Footer -->
   <footer class="krishposa-footer">
-    <p>{{ settings.footer_text }}</p>
+    <p>© {{ 'now' | date: '%Y' }} Tek Matrix LLC — All Rights Reserved.</p>
+    <p>Operated by Tek Matrix LLC • Powering the Krish Posa™ brand</p>
     <p>
       <a href="/policies/privacy-policy">Privacy Policy</a> • 
       <a href="/policies/terms-of-service">Terms</a>
     </p>
   </footer>
 
-  <!-- Countdown & Global Scripts -->
   <script src="{{ 'countdown.js' | asset_url }}"></script>
   {{ content_for_footer }}
 </body>
