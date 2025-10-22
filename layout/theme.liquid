@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,9 +9,11 @@
   <!-- Shopify Core -->
   {{ content_for_header }}
 
-  <!-- Dynamic Shopify Fonts -->
-  {{ settings.heading_font | font_face }}
-  {{ settings.body_font | font_face }}
+  <!-- Fonts -->
+  <style>
+    {{ settings.heading_font | font_face }}
+    {{ settings.body_font | font_face }}
+  </style>
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="{{ 'style-tek.css' | asset_url }}">
@@ -40,10 +43,8 @@
     }
   </style>
 
-  <!-- Favicon -->
   <link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/png">
 </head>
-
 <body class="krishposa-body">
 
   <!-- Header -->
