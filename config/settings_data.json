@@ -10,6 +10,9 @@
 {
   "current": {
     "logo": "shopify://shop_images/tek-logo.jpg",
+    "heading_font": "mono",
+    "heading_color": "#3663B0",
+    "text_color": "#F5F5F5",
     "footer_text": "© Krish Posa™ | Operated by Tek Matrix LLC",
     "content_for_index": []
   }

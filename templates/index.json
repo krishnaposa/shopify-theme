@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero-banner": {
@@ -5,21 +14,20 @@
       "settings": {
         "heading": "Train Harder. Grip Smarter.",
         "subheading": "Performance gear built for every rep.",
-        "button_label": "Shop Now",
-        "button_link": "/collections/all"
+        "button_link": "/collections/all",
+        "button_label": "Shop Now"
       }
     },
     "featured-product": {
       "type": "featured-product",
       "settings": {
+        "featured_product": "",
         "heading": "Featured Product"
       }
-    },
-     "testimonials": { "type": "testimonials", "settings": {} }
+    }
   },
   "order": [
     "hero-banner",
-    "featured-product",
-    "testimonials"
+    "featured-product"
   ]
 }
