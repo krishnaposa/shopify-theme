@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "show_sort": true,
+        "show_filter": true,
+        "enable_quick_add": true
+      }
+    }
+  },
+  "order": ["main"]
+}
