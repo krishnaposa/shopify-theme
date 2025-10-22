@@ -1,0 +1,35 @@
+<section class="contact-section">
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <p>Have questions or partnership ideas? Reach out to Tek Matrix below.</p>
+
+    <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form">
+      <input type="hidden" name="form_type" value="contact" />
+      <input type="hidden" name="utf8" value="✓" />
+
+      <div class="field-group">
+        <label for="contact_name">Name</label>
+        <input type="text" name="contact[name]" id="contact_name" required />
+      </div>
+
+      <div class="field-group">
+        <label for="contact_email">Email</label>
+        <input type="email" name="contact[email]" id="contact_email" required />
+      </div>
+
+      <div class="field-group">
+        <label for="contact_message">Message</label>
+        <textarea name="contact[body]" id="contact_message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="krishposa-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Page",
+  "settings": []
+}
+{% endschema %}
