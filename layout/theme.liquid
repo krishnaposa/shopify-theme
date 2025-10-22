@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page_title }} – Tek Matrix</title>
 
+  <!-- Shopify Core -->
   {{ content_for_header }}
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Dynamic Shopify Fonts -->
+  {{ settings.heading_font | font_face }}
+  {{ settings.body_font | font_face }}
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="{{ 'style-tek.css' | asset_url }}">
 
-  <!-- Theme Variables -->
+  <!-- Dynamic Theme Variables -->
   <style>
     :root {
       --primary-color: {{ settings.primary_color }};
@@ -22,9 +24,23 @@
       --heading-color: {{ settings.heading_color }};
       --background-color: {{ settings.background_color }};
       --text-color: {{ settings.text_color }};
+      --heading-font: {{ settings.heading_font.family }};
+      --body-font: {{ settings.body_font.family }};
+    }
+
+    body.krishposa-body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: var(--body-font, 'Inter'), sans-serif;
+    }
+
+    h1, h2, h3, .krishposa-logo {
+      font-family: var(--heading-font, 'Archivo Black'), sans-serif;
+      color: var(--heading-color);
     }
   </style>
 
+  <!-- Favicon -->
   <link rel="icon" href="{{ 'favicon.png' | asset_url }}" type="image/png">
 </head>
 
@@ -48,7 +64,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Main Content -->
   <main class="krishposa-main">
     {{ content_for_layout }}
   </main>
@@ -63,6 +79,7 @@
     </p>
   </footer>
 
+  <!-- Scripts -->
   <script src="{{ 'countdown.js' | asset_url }}"></script>
   {{ content_for_footer }}
 </body>
