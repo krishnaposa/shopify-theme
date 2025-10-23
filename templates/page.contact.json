@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Contact Tek Matrix",
+        "text": "Reach out for partnerships or support queries. We typically reply within 24 hours."
+      }
+    }
+  },
+  "order": ["contact-form"]
+}
