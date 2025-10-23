@@ -1,0 +1,33 @@
+<section class="section main-product">
+  <div class="product-container">
+    <div class="product-media">
+      {{ product.featured_media | image_url: width: 900 | image_tag }}
+    </div>
+    <div class="product-info">
+      <h1>{{ product.title }}</h1>
+      <p class="product-price">{{ product.price | money }}</p>
+      <form method="post" action="/cart/add">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        {% if section.settings.show_quantity_selector %}
+          <label for="quantity">Qty:</label>
+          <input type="number" id="quantity" name="quantity" value="1" min="1">
+        {% endif %}
+        <button type="submit" class="krishposa-btn">Add to Cart</button>
+      </form>
+      <div class="product-description">
+        {{ product.description }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": [
+    { "type": "checkbox", "id": "show_quantity_selector", "label": "Show quantity selector", "default": true },
+    { "type": "checkbox", "id": "show_vendor", "label": "Show vendor", "default": false },
+    { "type": "checkbox", "id": "show_share", "label": "Show share buttons", "default": true }
+  ]
+}
+{% endschema %}
