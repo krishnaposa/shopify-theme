@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {
+        "show_sort": true,
+        "show_filter": true,
+        "heading": "Shop Collections"
+      }
+    }
+  },
+  "order": ["main-collection"]
+}
