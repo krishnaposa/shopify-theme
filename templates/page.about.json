@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "About Tek Matrix",
+        "subheading": "Where Technology Meets Performance",
+        "button_label": "Explore Products",
+        "button_link": "/collections/all"
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "settings": {
+        "heading": "Our Mission",
+        "content": "<p>Tek Matrix LLC is a modern performance brand merging fitness and technology to deliver elite tools that empower athletes and creators alike.</p>"
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "about-banner.jpg",
+        "heading": "Innovation in Motion",
+        "text": "Every product is engineered with precision and purpose to push the boundaries of what’s possible in training and recovery."
+      }
+    }
+  },
+  "order": ["hero-banner", "rich-text", "image-with-text"]
+}
