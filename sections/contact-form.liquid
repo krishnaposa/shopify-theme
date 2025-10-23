@@ -1,0 +1,29 @@
+<section class="section contact-form">
+  <div class="container">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.text }}</p>
+    <form method="post" action="/contact#contact_form" id="contact_form">
+      <input type="hidden" name="form_type" value="contact">
+      <label for="contact_name">Name</label>
+      <input type="text" name="contact[name]" id="contact_name" required>
+
+      <label for="contact_email">Email</label>
+      <input type="email" name="contact[email]" id="contact_email" required>
+
+      <label for="contact_message">Message</label>
+      <textarea name="contact[body]" id="contact_message" rows="5" required></textarea>
+
+      <button type="submit" class="krishposa-btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Form",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Contact Us" },
+    { "type": "textarea", "id": "text", "label": "Intro Text", "default": "Reach out and we’ll get back to you soon." }
+  ]
+}
+{% endschema %}
