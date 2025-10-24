@@ -431,3 +431,50 @@ body.krishposa-body {
     font-size: 0.9em;
   }
 }
+
+/* === SPECIFICATIONS COLLAPSIBLE === */
+.product-specs {
+  margin-top: 25px;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 10px 15px;
+  color: var(--text-color);
+}
+
+.product-specs summary {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.1em;
+  color: var(--accent-color);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.product-specs summary:hover {
+  color: var(--secondary-color);
+}
+
+.spec-table p {
+  margin: 8px 0;
+  color: #ddd;
+  font-size: 0.95em;
+}
+
+.spec-table strong {
+  color: var(--primary-color);
+}
+
+/* === LIMIT DESCRIPTION IMAGES === */
+.product-description img {
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 10px auto;
+}
+
+/* === DARK BACKGROUND TEXT FIX === */
+.product-description,
+.spec-table p {
+  color: #e5e5e5;
+}
