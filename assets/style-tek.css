@@ -64,7 +64,9 @@ body.krishposa-body {
 }
 
 .site-logo {
+  /*
   max-height: 60px;
+  */
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
