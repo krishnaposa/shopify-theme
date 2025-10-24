@@ -1,4 +1,4 @@
-/* === Tek Matrix Unified Style (2025 Production Edition) === */
+/* === Tek Matrix Unified Style (2025 Dawn-Optimized Production Edition) === */
 
 /* === GLOBAL === */
 body.krishposa-body {
@@ -432,49 +432,88 @@ body.krishposa-body {
   }
 }
 
-/* === SPECIFICATIONS COLLAPSIBLE === */
+/* === SPECIFICATIONS (Dawn-Style Accordion) === */
 .product-specs {
   margin-top: 25px;
-  background: #111;
+  background: #141414;
   border: 1px solid #333;
-  border-radius: 6px;
-  padding: 10px 15px;
-  color: var(--text-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .product-specs summary {
+  position: relative;
   font-family: 'Archivo Black', sans-serif;
-  font-size: 1.1em;
+  font-size: 1.05em;
   color: var(--accent-color);
   cursor: pointer;
   text-transform: uppercase;
+  padding: 15px 18px;
+  list-style: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-specs summary::-webkit-details-marker {
+  display: none;
+}
+
+.product-specs summary::after {
+  content: "›";
+  font-size: 1.4em;
+  color: var(--accent-color);
+  transform: rotate(90deg);
+  transition: transform 0.25s ease;
+}
+
+.product-specs[open] summary::after {
+  transform: rotate(-90deg);
 }
 
 .product-specs summary:hover {
   color: var(--secondary-color);
 }
 
+.spec-table {
+  padding: 0 18px 15px;
+  border-top: 1px solid #333;
+  animation: fadeIn 0.4s ease;
+}
+
 .spec-table p {
-  margin: 8px 0;
+  margin: 10px 0;
   color: #ddd;
   font-size: 0.95em;
+  line-height: 1.4;
 }
 
 .spec-table strong {
   color: var(--primary-color);
+  font-weight: 600;
 }
 
-/* === LIMIT DESCRIPTION IMAGES === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === DESCRIPTION IMAGES (Responsive & Centered) === */
 .product-description img {
-  max-width: 400px;
+  max-width: 480px;
+  width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
   display: block;
-  margin: 10px auto;
+  margin: 18px auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
 }
 
-/* === DARK BACKGROUND TEXT FIX === */
-.product-description,
-.spec-table p {
-  color: #e5e5e5;
+.product-description {
+  margin-top: 25px;
+  color: #e8e8e8;
+  font-size: 1em;
+  line-height: 1.7;
 }
