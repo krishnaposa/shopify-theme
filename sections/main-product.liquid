@@ -22,14 +22,13 @@
         <p class="product-price">{{ product.price | money }}</p>
       {% endif %}
 
-      {% if section.settings.show_vendor and product.vendor %}
-        <p class="product-vendor">By {{ product.vendor }}</p>
+      {% if section.settings.show_vendor and product.vendor and product.vendor != "NoEnName_Null" %}
+        <p class="product-vendor">Brand: {{ product.vendor }}</p>
       {% endif %}
 
       <!-- ADD TO CART -->
       <form method="post" action="/cart/add" class="add-to-cart-form">
         <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-
         {% if section.settings.show_quantity_selector %}
           <div class="quantity-wrapper">
             <label for="quantity">Qty:</label>
@@ -43,9 +42,35 @@
             >
           </div>
         {% endif %}
-
         <button type="submit" class="krishposa-btn">Add to Cart</button>
       </form>
+
+      <!-- SPECIFICATIONS (COLLAPSIBLE) -->
+      {% if product.metafields.custom %}
+      <details class="product-specs">
+        <summary>Specifications</summary>
+        <div class="spec-table">
+          {% if product.metafields.custom.department_name %}
+            <p><strong>Department:</strong> {{ product.metafields.custom.department_name }}</p>
+          {% endif %}
+          {% if product.metafields.custom.origin %}
+            <p><strong>Origin:</strong> {{ product.metafields.custom.origin }}</p>
+          {% endif %}
+          {% if product.metafields.custom.training_site %}
+            <p><strong>Training Site:</strong> {{ product.metafields.custom.training_site }}</p>
+          {% endif %}
+          {% if product.metafields.custom.type_of_sports %}
+            <p><strong>Type of Sports:</strong> {{ product.metafields.custom.type_of_sports }}</p>
+          {% endif %}
+          {% if product.metafields.custom.suitable_for %}
+            <p><strong>Suitable For:</strong> {{ product.metafields.custom.suitable_for }}</p>
+          {% endif %}
+          {% if product.metafields.custom.usage_scenarios %}
+            <p><strong>Usage Scenarios:</strong> {{ product.metafields.custom.usage_scenarios }}</p>
+          {% endif %}
+        </div>
+      </details>
+      {% endif %}
 
       <!-- PRODUCT DESCRIPTION -->
       {% if product.description %}
@@ -58,15 +83,9 @@
       {% if section.settings.show_share %}
         <div class="share-links">
           <p>Share:</p>
-          <a 
-            href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ product.url }}" 
-            target="_blank">Facebook</a> |
-          <a 
-            href="https://twitter.com/share?url={{ shop.url }}{{ product.url }}" 
-            target="_blank">X</a> |
-          <a 
-            href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}" 
-            target="_blank">Pinterest</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ product.url }}" target="_blank">Facebook</a> |
+          <a href="https://twitter.com/share?url={{ shop.url }}{{ product.url }}" target="_blank">X</a> |
+          <a href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}" target="_blank">Pinterest</a>
         </div>
       {% endif %}
     </div>
@@ -87,7 +106,7 @@
       "type": "checkbox",
       "id": "show_vendor",
       "label": "Show vendor",
-      "default": false
+      "default": true
     },
     {
       "type": "checkbox",
