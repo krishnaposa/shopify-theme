@@ -19,7 +19,7 @@
     "image-with-text": {
       "type": "image-with-text",
       "settings": {
-        "image": "about-banner.jpg",
+        "image": "",
         "heading": "Innovation in Motion",
         "text": "Every product is engineered with precision and purpose to push the boundaries of what’s possible in training and recovery."
       }
