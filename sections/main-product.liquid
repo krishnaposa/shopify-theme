@@ -49,15 +49,27 @@
       <details class="product-specs">
         <summary>Specifications</summary>
         <div class="spec-table">
-
+          {% if product.vendor %}
           <p><strong>Brand:</strong> {{ product.vendor | default: "N/A" }}</p>
+          {% endif %}
+          {% if product.metafields.custom.department_name %}
           <p><strong>Department:</strong> {{ product.metafields.custom.department_name | default: "General" }}</p>
-          <p><strong>Origin:</strong> {{ product.metafields.custom.origin | default: "Unknown" }}</p>
+          {% endif %}
+          {% if product.metafields.custom.origin %}
+          <p><strong>Origin:</strong> {{ product.metafields.custom.origin | default: "NA" }}</p>
+          {% endif %}
+          {% if product.metafields.custom.training_site %}
           <p><strong>Training Site:</strong> {{ product.metafields.custom.training_site | default: "Gym or Home" }}</p>
+          {% endif %}
+          {% if product.metafields.custom.type_of_sports %}
           <p><strong>Type of Sport:</strong> {{ product.metafields.custom.type_of_sports | default: "Fitness / Strength" }}</p>
+          {% endif %}
+          {% if product.metafields.custom.suitable_for %}
           <p><strong>Suitable For:</strong> {{ product.metafields.custom.suitable_for | default: "All athletes" }}</p>
+          {% endif %}
+          {% if product.metafields.custom.usage_scenarios %}
           <p><strong>Usage Scenarios:</strong> {{ product.metafields.custom.usage_scenarios | default: "Gym, Home, Travel" }}</p>
-
+          {% endif %}
         </div>
       </details>
 
