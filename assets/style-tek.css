@@ -519,3 +519,12 @@ body.krishposa-body {
   font-size: 1em;
   line-height: 1.7;
 }
+
+.product-specs[open] .spec-table {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
