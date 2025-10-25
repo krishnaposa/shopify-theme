@@ -1,0 +1,53 @@
+<section class="section cart-page">
+  <div class="container">
+    <h1 class="cart-heading">Your Cart</h1>
+
+    {% if cart.item_count > 0 %}
+      <form action="/cart" method="post" novalidate class="cart-form">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in cart.items %}
+              <tr class="cart-item">
+                <td class="cart-item-info">
+                  <a href="{{ item.url }}">
+                    <img src="{{ item.image | img_url: '200x' }}" alt="{{ item.title }}" class="cart-item-image">
+                  </a>
+                  <div>
+                    <a href="{{ item.url }}" class="cart-item-title">{{ item.product.title }}</a>
+                    {% if item.variant.title != 'Default Title' %}
+                      <p class="variant">{{ item.variant.title }}</p>
+                    {% endif %}
+                    <a href="{{ item.url_to_remove }}" class="remove-item">Remove</a>
+                  </div>
+                </td>
+                <td>{{ item.price | money }}</td>
+                <td>
+                  <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" class="quantity-input">
+                </td>
+                <td>{{ item.line_price | money }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <div class="cart-summary">
+          <p class="subtotal">Subtotal: <strong>{{ cart.total_price | money }}</strong></p>
+          <button type="submit" name="update" class="krishposa-btn secondary-btn">Update Cart</button>
+          <a href="/checkout" class="krishposa-btn">Checkout</a>
+        </div>
+      </form>
+
+    {% else %}
+      <p class="empty-cart">Your cart is currently empty.</p>
+      <a href="/collections/all" class="krishposa-btn">Continue Shopping</a>
+    {% endif %}
+  </div>
+</section>
