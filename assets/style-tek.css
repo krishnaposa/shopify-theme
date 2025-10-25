@@ -64,9 +64,6 @@ body.krishposa-body {
 }
 
 .site-logo {
-  /*
-  max-height: 60px;
-  */
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
@@ -152,6 +149,24 @@ body.krishposa-body {
   transform: scale(1.05);
 }
 
+/* === VIEW CART BUTTON === */
+.view-cart-btn {
+  display: inline-block;
+  background-color: #f39c12;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 6px;
+  margin-top: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.view-cart-btn:hover {
+  background-color: #e67e22;
+  transform: scale(1.04);
+}
+
 /* === FEATURED PRODUCT === */
 .krishposa-features {
   max-width: 700px;
@@ -176,119 +191,38 @@ body.krishposa-body {
   color: var(--text-color);
 }
 
-/* === TESTIMONIALS === */
-.krishposa-testimonials {
-  padding: 80px 20px;
-  background: var(--background-color, #0d0d0d);
-  text-align: center;
-}
-
-.testimonial-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.testimonial-heading {
-  color: var(--heading-color, #8a3fa0);
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 2.2em;
-  margin-bottom: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.testimonial-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.testimonial-item {
-  background: var(--secondary-color, #366380);
-  border-top: 4px solid var(--accent-color, #f28c28);
-  color: var(--text-color, #eee);
-  padding: 25px 20px;
-  border-radius: 10px;
-  max-width: 300px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
-  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1),
-              box-shadow 0.25s ease;
-}
-
-.testimonial-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
-}
-
-.quote {
-  font-style: italic;
-  margin-bottom: 15px;
-  color: var(--primary-color, #6bb642);
-}
-
-.author {
-  font-weight: bold;
-  color: var(--accent-color, #f28c28);
-}
-
-/* === IMAGE WITH TEXT === */
-.image-with-text {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  align-items: center;
-  padding: var(--section-padding) 20px;
-}
-
-.image-with-text img {
-  border-radius: 8px;
-  width: 100%;
-  height: auto;
-}
-
-.text-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: var(--text-color);
-}
-
-.text-col h2 {
-  color: var(--heading-color);
-  margin-bottom: 10px;
-}
-
-@media (min-width: 768px) {
-  .image-with-text {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 /* === PRODUCT PAGE === */
 .main-product {
   padding: 60px 20px;
 }
 
 .product-container {
-  display: grid;
-  gap: 40px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .product-container {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+    text-align: left;
   }
 }
 
 .product-media img.product-image {
   width: 100%;
+  max-width: 420px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin: 0 auto;
+  display: block;
 }
 
 .product-info {
@@ -309,10 +243,18 @@ body.krishposa-body {
   margin-bottom: 20px;
 }
 
+/* === QUANTITY AND DESCRIPTION === */
 .quantity-wrapper {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .quantity-wrapper {
+    justify-content: flex-start;
+  }
 }
 
 .quantity-wrapper label {
@@ -329,112 +271,19 @@ body.krishposa-body {
   color: #fff;
 }
 
-.product-description {
-  margin-top: 20px;
-  color: #ccc;
-  line-height: 1.7;
-}
-
-.share-links {
-  margin-top: 25px;
-  color: var(--text-color);
-}
-
-.share-links a {
+/* === BUNDLE OFFER === */
+.bundle-offer {
+  margin-top: 10px;
+  font-size: 1em;
   color: var(--accent-color);
-  text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.bundle-offer strong {
+  color: var(--primary-color);
 }
 
-.share-links a:hover {
-  color: var(--secondary-color);
-}
-
-/* === COLLECTION GRID === */
-.collection-grid {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  padding: var(--section-padding) 20px;
-}
-
-.collection-item {
-  background: #111;
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.collection-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.collection-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-.collection-item h3 {
-  margin: 15px 0;
-  color: var(--heading-color);
-  font-family: 'Archivo Black', sans-serif;
-}
-
-/* === FOOTER === */
-.krishposa-footer {
-  text-align: center;
-  padding: 60px 10px;
-  background: #000;
-  color: #999;
-  font-size: 0.9em;
-  border-top: 2px solid var(--primary-color);
-}
-
-.krishposa-footer a {
-  color: var(--accent-color);
-  text-decoration: none;
-}
-
-.krishposa-footer a:hover {
-  color: var(--secondary-color);
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .krishposa-header-inner {
-    flex-direction: column;
-  }
-
-  .krishposa-nav {
-    margin-top: 15px;
-  }
-
-  .hero-banner-content h1 {
-    font-size: 1.8em;
-  }
-
-  .hero-banner-content p {
-    font-size: 1em;
-  }
-
-  .testimonial-item {
-    max-width: 90%;
-  }
-
-  h1, h2 {
-    font-size: 1.5em;
-  }
-
-  .krishposa-btn {
-    padding: 12px 24px;
-    font-size: 0.9em;
-  }
-}
-
-/* === SPECIFICATIONS (Dawn-Style Accordion) === */
+/* === SPECIFICATIONS ACCORDION === */
 .product-specs {
   margin-top: 25px;
   background: #141414;
@@ -442,6 +291,9 @@ body.krishposa-body {
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .product-specs summary {
@@ -502,7 +354,14 @@ body.krishposa-body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* === DESCRIPTION IMAGES (Responsive & Centered) === */
+/* === PRODUCT DESCRIPTION === */
+.product-description {
+  margin-top: 25px;
+  color: #e8e8e8;
+  font-size: 1em;
+  line-height: 1.7;
+}
+
 .product-description img {
   max-width: 480px;
   width: 100%;
@@ -511,22 +370,6 @@ body.krishposa-body {
   display: block;
   margin: 18px auto;
   box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-}
-
-.product-description {
-  margin-top: 25px;
-  color: #e8e8e8;
-  font-size: 1em;
-  line-height: 1.7;
-}
-
-.product-specs[open] .spec-table {
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* === CART PAGE === */
@@ -595,15 +438,6 @@ body.krishposa-body {
   color: #f55;
 }
 
-.quantity-input {
-  width: 70px;
-  padding: 6px;
-  border-radius: 6px;
-  border: 1px solid #444;
-  background: #111;
-  color: #fff;
-}
-
 .cart-summary {
   margin-top: 40px;
 }
@@ -617,15 +451,4 @@ body.krishposa-body {
 .empty-cart {
   color: #ccc;
   margin-bottom: 20px;
-}
-
-.bundle-offer {
-  margin-top: 6px;
-  font-size: 1em;
-  color: var(--accent-color);
-  font-weight: 600;
-  line-height: 1.4;
-}
-.bundle-offer strong {
-  color: var(--primary-color);
 }
