@@ -618,3 +618,14 @@ body.krishposa-body {
   color: #ccc;
   margin-bottom: 20px;
 }
+
+.bundle-offer {
+  margin-top: 6px;
+  font-size: 1em;
+  color: var(--accent-color);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.bundle-offer strong {
+  color: var(--primary-color);
+}
