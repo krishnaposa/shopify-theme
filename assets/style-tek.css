@@ -317,188 +317,7 @@ body.krishposa-body {
   color: #fff;
 }
 
-/* === BUNDLE OFFER === */
-.bundle-offer {
-  margin-top: 10px;
-  font-size: 1em;
-  color: var(--accent-color);
-  font-weight: 600;
-  line-height: 1.4;
-}
-.bundle-offer strong {
-  color: var(--primary-color);
-}
-
-/* === SPECIFICATIONS ACCORDION === */
-.product-specs {
-  margin-top: 25px;
-  background: #141414;
-  border: 1px solid #333;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  max-width: 480px;
-  margin-right: auto;
-}
-
-.product-specs summary {
-  position: relative;
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 1.05em;
-  color: var(--accent-color);
-  cursor: pointer;
-  text-transform: uppercase;
-  padding: 15px 18px;
-  list-style: none;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.product-specs summary::-webkit-details-marker {
-  display: none;
-}
-
-.product-specs summary::after {
-  content: "›";
-  font-size: 1.4em;
-  color: var(--accent-color);
-  transform: rotate(90deg);
-  transition: transform 0.25s ease;
-}
-
-.product-specs[open] summary::after {
-  transform: rotate(-90deg);
-}
-
-.product-specs summary:hover {
-  color: var(--secondary-color);
-}
-
-.spec-table {
-  padding: 0 18px 15px;
-  border-top: 1px solid #333;
-  animation: fadeIn 0.4s ease;
-}
-
-.spec-table p {
-  margin: 10px 0;
-  color: #ddd;
-  font-size: 0.95em;
-  line-height: 1.4;
-}
-
-.spec-table strong {
-  color: var(--primary-color);
-  font-weight: 600;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* === PRODUCT DESCRIPTION === */
-.product-description {
-  margin-top: 25px;
-  color: #e8e8e8;
-  font-size: 1em;
-  line-height: 1.7;
-}
-
-.product-description img {
-  max-width: 480px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
-  margin: 18px auto;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-}
-
-/* === CART PAGE === */
-.cart-page {
-  padding: 80px 20px;
-  text-align: center;
-  color: var(--text-color);
-}
-
-.cart-heading {
-  font-family: 'Archivo Black', sans-serif;
-  color: var(--heading-color);
-  margin-bottom: 40px;
-}
-
-.cart-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-  color: var(--text-color);
-}
-
-.cart-table th {
-  background: #111;
-  padding: 12px;
-  text-transform: uppercase;
-  color: var(--primary-color);
-}
-
-.cart-table td {
-  padding: 15px;
-  border-bottom: 1px solid #333;
-}
-
-.cart-item-image {
-  width: 80px;
-  height: auto;
-  margin-right: 15px;
-  border-radius: 8px;
-}
-
-.cart-item-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-align: left;
-}
-
-.cart-item-title {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.cart-item-title:hover {
-  color: var(--secondary-color);
-}
-
-.remove-item {
-  font-size: 0.85em;
-  color: #999;
-  text-decoration: none;
-}
-
-.remove-item:hover {
-  color: #f55;
-}
-
-.cart-summary {
-  margin-top: 40px;
-}
-
-.cart-summary .subtotal {
-  font-size: 1.3em;
-  margin-bottom: 20px;
-  color: var(--heading-color);
-}
-
-.empty-cart {
-  color: #ccc;
-  margin-bottom: 20px;
-}
-
-/* === CONTACT FORM SECTION === */
+/* === CONTACT FORM SECTION FIX === */
 .contact-section {
   max-width: 700px;
   margin: 80px auto;
@@ -519,17 +338,22 @@ body.krishposa-body {
   line-height: 1.6;
 }
 
-/* Contact Form Layout */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+/* Override Shopify grid form layout */
+.contact form,
+form.contact-form,
+form[action*="/contact"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 18px !important;
+  width: 100%;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea,
+form.contact-form input,
+form.contact-form textarea {
   width: 100%;
   max-width: 550px;
   padding: 12px 14px;
@@ -540,14 +364,16 @@ body.krishposa-body {
   font-size: 1em;
 }
 
-.contact-form textarea {
+.contact textarea {
   min-height: 120px;
   resize: vertical;
 }
 
 /* Button Styling */
-.contact-form button,
-.contact-form input[type="submit"] {
+.contact button,
+.contact input[type="submit"],
+form.contact-form button,
+form.contact-form input[type="submit"] {
   background: var(--accent-color);
   color: #fff;
   padding: 12px 30px;
@@ -558,15 +384,10 @@ body.krishposa-body {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.contact-form button:hover,
-.contact-form input[type="submit"]:hover {
+.contact button:hover,
+.contact input[type="submit"]:hover,
+form.contact-form button:hover,
+form.contact-form input[type="submit"]:hover {
   background: var(--secondary-color);
   transform: scale(1.04);
-}
-
-/* Responsive Alignment */
-@media (min-width: 768px) {
-  .contact-form {
-    align-items: flex-start;
-  }
 }
