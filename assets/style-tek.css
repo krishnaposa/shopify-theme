@@ -2,7 +2,7 @@
 
 /* === GLOBAL === */
 body.krishposa-body {
-  margin: 0;
+  margin-left: 25px;
   font-family: 'Inter', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
