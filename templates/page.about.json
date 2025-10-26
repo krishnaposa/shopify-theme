@@ -25,5 +25,5 @@
       }
     }
   },
-  "order": ["hero-banner", "rich-text", "image-with-text"]
+  "order": ["hero-banner", "rich-text"]
 }
