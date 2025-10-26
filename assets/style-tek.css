@@ -191,25 +191,29 @@ body.krishposa-body {
   color: var(--text-color);
 }
 
-/* === FEATURED PRODUCT LAYOUT FIX === */
+/* === FEATURED PRODUCT LAYOUT & SPACING FIX === */
+#shopify-section-featured-product,
 .featured-product-section {
+  margin-top: 60px !important;
+  margin-bottom: 60px !important;
+  padding: 40px 20px !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   gap: 40px;
-  margin: 60px auto;
-  padding: 40px 20px;
-  max-width: 1000px;
 }
 
+#shopify-section-featured-product img,
 .featured-product-section img {
+  border-radius: 10px;
   max-width: 480px;
   width: 100%;
   height: auto;
-  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: block;
+  margin: 0 auto;
 }
 
 .featured-product-content h3 {
@@ -225,6 +229,7 @@ body.krishposa-body {
 }
 
 @media (min-width: 768px) {
+  #shopify-section-featured-product,
   .featured-product-section {
     flex-direction: row;
     gap: 60px;
