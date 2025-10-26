@@ -340,7 +340,6 @@ body.krishposa-body {
 
 /* Inline form styling */
 form.contact-form {
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 18px;
