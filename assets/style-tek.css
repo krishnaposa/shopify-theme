@@ -497,3 +497,76 @@ body.krishposa-body {
   color: #ccc;
   margin-bottom: 20px;
 }
+
+/* === CONTACT FORM SECTION === */
+.contact-section {
+  max-width: 700px;
+  margin: 80px auto;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.contact-section h2 {
+  color: var(--heading-color);
+  font-family: 'Archivo Black', sans-serif;
+  margin-bottom: 15px;
+}
+
+.contact-section p {
+  color: #bbb;
+  margin-bottom: 25px;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* Contact Form Layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  max-width: 550px;
+  padding: 12px 14px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  font-size: 1em;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button Styling */
+.contact-form button,
+.contact-form input[type="submit"] {
+  background: var(--accent-color);
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover,
+.contact-form input[type="submit"]:hover {
+  background: var(--secondary-color);
+  transform: scale(1.04);
+}
+
+/* Responsive Alignment */
+@media (min-width: 768px) {
+  .contact-form {
+    align-items: flex-start;
+  }
+}
