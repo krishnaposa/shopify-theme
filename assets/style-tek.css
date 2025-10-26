@@ -191,6 +191,47 @@ body.krishposa-body {
   color: var(--text-color);
 }
 
+/* === FEATURED PRODUCT LAYOUT FIX === */
+.featured-product-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  max-width: 1000px;
+}
+
+.featured-product-section img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.featured-product-content h3 {
+  font-family: 'Archivo Black', sans-serif;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.featured-product-content p {
+  color: var(--text-color);
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .featured-product-section {
+    flex-direction: row;
+    gap: 60px;
+    text-align: left;
+  }
+}
+
 /* === PRODUCT PAGE === */
 .main-product {
   padding: 60px 20px;
