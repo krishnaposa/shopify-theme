@@ -1,9 +1,11 @@
-<section class="section contact-form">
+<section class="section contact-section">
   <div class="container">
     <h2>{{ section.settings.heading }}</h2>
     <p>{{ section.settings.text }}</p>
-    <form method="post" action="/contact#contact_form" id="contact_form">
+
+    <form method="post" action="/contact#contact_form" id="contact_form" class="contact-form">
       <input type="hidden" name="form_type" value="contact">
+
       <label for="contact_name">Name</label>
       <input type="text" name="contact[name]" id="contact_name" required>
 
@@ -22,8 +24,18 @@
 {
   "name": "Contact Form",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Contact Us" },
-    { "type": "textarea", "id": "text", "label": "Intro Text", "default": "Reach out and we’ll get back to you soon." }
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Contact Tek Matrix"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Intro Text",
+      "default": "Reach out for partnerships or support queries. We typically reply within 24 hours."
+    }
   ]
 }
 {% endschema %}
