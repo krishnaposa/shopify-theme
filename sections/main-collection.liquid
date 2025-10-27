@@ -1,18 +1,23 @@
 {% comment %}
-Main Collection Section — Tek Matrix Theme
+Main Collection Section — Tek Matrix Theme (Home + Collection Compatible)
 {% endcomment %}
+
+{% assign current_collection = collection %}
+{% if current_collection == nil %}
+  {% assign current_collection = collections['all'] %}
+{% endif %}
 
 <section class="section main-collection">
   <div class="container">
-    <h1>{{ collection.title }}</h1>
+    <h1>{{ section.settings.heading | default: current_collection.title }}</h1>
 
-    {% if collection.description != blank %}
-      <p class="collection-description">{{ collection.description }}</p>
+    {% if current_collection.description != blank %}
+      <p class="collection-description">{{ current_collection.description }}</p>
     {% endif %}
 
-    {% if collection.products_count > 0 %}
+    {% if current_collection.products_count > 0 %}
       <div class="grid grid--3-col">
-        {% for product in collection.products %}
+        {% for product in current_collection.products %}
           <div class="product-card">
             <a href="{{ product.url }}">
               {{ product.featured_image | image_url: width: 500 | image_tag: class: 'product-image' }}
@@ -30,13 +35,18 @@ Main Collection Section — Tek Matrix Theme
 
 {% schema %}
 {
-  "name": "Main Collection",
+  "name": "Main Collection (Universal)",
   "settings": [
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Shop Collection"
+      "default": "Shop All Products"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Collection (Universal)"
     }
   ]
 }
