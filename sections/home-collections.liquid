@@ -1,9 +1,11 @@
 <section class="section home-collections">
   <div class="container">
     <h2 class="collections-heading">{{ section.settings.heading }}</h2>
+
     <div class="collections-grid">
-      {% for collection in collections %}
-        {% if collection.all_products_count > 0 %}
+      {% for block in section.blocks %}
+        {% assign collection = collections[block.settings.collection] %}
+        {% if collection %}
           <div class="collection-item">
             <a href="{{ collection.url }}">
               {% if collection.image %}
@@ -32,6 +34,26 @@
       "id": "heading",
       "label": "Heading",
       "default": "Shop All Collections"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8,
+  "presets": [
+    {
+      "name": "Home Collections Grid",
+      "category": "Custom Sections"
     }
   ]
 }
