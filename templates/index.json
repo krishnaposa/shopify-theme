@@ -18,16 +18,15 @@
         "button_label": "Shop Now"
       }
     },
-    "featured-product": {
-      "type": "featured-product",
+    "home-collections": {
+      "type": "home-collections",
       "settings": {
-        "featured_product": "anti-slip-workout-grips-silicone-non-slip-fingerless-crosstraining-grips-gym-hand-gloves-dumbbell-gripper-exercise-support",
-        "heading": "Featured Product"
+        "heading": "Shop All Collections"
       }
     }
   },
   "order": [
     "hero-banner",
-    "featured-product"
+    "home-collections"
   ]
 }
