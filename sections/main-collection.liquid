@@ -1,5 +1,6 @@
 {% comment %}
-Main Collection Section — Tek Matrix Theme (Home + Collection Compatible)
+Tek Matrix — Universal Product Grid Section
+Works on both homepage and collection pages
 {% endcomment %}
 
 {% assign current_collection = collection %}
@@ -9,13 +10,9 @@ Main Collection Section — Tek Matrix Theme (Home + Collection Compatible)
 
 <section class="section main-collection">
   <div class="container">
-    <h1>{{ section.settings.heading | default: current_collection.title }}</h1>
+    <h1>{{ section.settings.heading | default: "Shop All Products" }}</h1>
 
-    {% if current_collection.description != blank %}
-      <p class="collection-description">{{ current_collection.description }}</p>
-    {% endif %}
-
-    {% if current_collection.products_count > 0 %}
+    {% if current_collection and current_collection.products_count > 0 %}
       <div class="grid grid--3-col">
         {% for product in current_collection.products %}
           <div class="product-card">
@@ -27,8 +24,21 @@ Main Collection Section — Tek Matrix Theme (Home + Collection Compatible)
           </div>
         {% endfor %}
       </div>
+
     {% else %}
-      <p>No products found in this collection.</p>
+      <!-- fallback using all_products object -->
+      <div class="grid grid--3-col">
+        {% assign sample_handles = shop.products | slice: 0, 12 %}
+        {% for product in collections['all'].products limit: 12 %}
+          <div class="product-card">
+            <a href="{{ product.url }}">
+              {{ product.featured_image | image_url: width: 500 | image_tag: class: 'product-image' }}
+              <h3>{{ product.title }}</h3>
+              <p class="price">{{ product.price | money }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
     {% endif %}
   </div>
 </section>
