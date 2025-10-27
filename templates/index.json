@@ -18,7 +18,7 @@
         "button_label": "Shop Now"
       }
     },
-    "home-collections": {
+    "main-collection": {
       "type": "main-collection",
       "settings": {
         "heading": "Shop All Collections"
