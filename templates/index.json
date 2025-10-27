@@ -19,7 +19,7 @@
       }
     },
     "collection": {
-      "type": "home-collections",
+      "type": "main-collection",
       "settings": {
         "heading": "Shop All Collections"
       }
