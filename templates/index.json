@@ -18,8 +18,8 @@
         "button_label": "Shop Now"
       }
     },
-    "main-collection": {
-      "type": "main-collection",
+    "collection": {
+      "type": "home-collections",
       "settings": {
         "heading": "Shop All Collections"
       }
@@ -27,6 +27,6 @@
   },
   "order": [
     "hero-banner",
-    "main-collection"
+    "collection"
   ]
 }
