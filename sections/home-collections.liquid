@@ -1,0 +1,33 @@
+<section class="section home-collections">
+  <div class="container">
+    <h2 class="collections-heading">{{ section.settings.heading }}</h2>
+    <div class="collections-grid">
+      {% for collection in collections %}
+        <div class="collection-item">
+          <a href="{{ collection.url }}">
+            {% if collection.image %}
+              <img src="{{ collection.image | image_url: width: 500 }}" alt="{{ collection.title }}">
+            {% else %}
+              <img src="{{ 'placeholder-image.png' | asset_url }}" alt="{{ collection.title }}">
+            {% endif %}
+            <h3>{{ collection.title }}</h3>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home Collections Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop Collections"
+    }
+  ]
+}
+{% endschema %}
