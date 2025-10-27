@@ -401,3 +401,49 @@ form.contact-form {
     width: 100%;
   }
 }
+/* === HOME COLLECTIONS GRID === */
+.home-collections {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.collections-heading {
+  color: var(--heading-color);
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+.collections-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  justify-content: center;
+  align-items: stretch;
+}
+
+.collection-item {
+  background: #101010;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+.collection-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
+
+.collection-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.collection-item h3 {
+  color: var(--accent-color);
+  padding: 15px 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
