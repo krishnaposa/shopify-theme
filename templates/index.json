@@ -19,7 +19,7 @@
       }
     },
     "home-collections": {
-      "type": "home-collections",
+      "type": "main-collection",
       "settings": {
         "heading": "Shop All Collections"
       }
@@ -27,6 +27,6 @@
   },
   "order": [
     "hero-banner",
-    "home-collections"
+    "main-collection"
   ]
 }
